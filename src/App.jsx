@@ -76,7 +76,7 @@ function App() {
     setMonster();
     setSetting();
     setTrope();
-  }
+  };
 
   return (
     <section id="center">
@@ -90,7 +90,7 @@ function App() {
           <br />
         </div>
         <div className="flex-container">
-      <div className="item1">
+          <div className="item1">
             <button onClick={rollTropes}>Roll a D6 to Choose the Trope</button>
             {trope && (
               <div className="result">
@@ -100,22 +100,22 @@ function App() {
                 <p>{trope}</p>
               </div>
             )}
-</div>
-            <div className="item2">
-              <button onClick={rollSettings}>
-                Roll a D5 to Choose the Setting
-              </button>
+          </div>
+          <div className="item2">
+            <button onClick={rollSettings}>
+              Roll a D5 to Choose the Setting
+            </button>
 
-              {setting && (
-                <div className="result">
-                  <p>
-                    <b>Your Setting:</b>
-                  </p>
-                  <p>{setting}</p>
-                </div>
-              )}
-            </div>
-           <div className="item3">
+            {setting && (
+              <div className="result">
+                <p>
+                  <b>Your Setting:</b>
+                </p>
+                <p>{setting}</p>
+              </div>
+            )}
+          </div>
+          <div className="item3">
             <button onClick={rollMeetCutes}>
               Roll a D10 to Choose the Meet Cute
             </button>
@@ -128,40 +128,43 @@ function App() {
                 <p>{meetCute}</p>
               </div>
             )}
-</div>
-            <div className="item4">
-              <button onClick={rollMonsters}>
-                Roll a D10 to Choose the Monster
-              </button>
+          </div>
+          <div className="item4">
+            <button onClick={rollMonsters}>
+              Roll a D10 to Choose the Monster
+            </button>
 
-              {monster && (
-                <div className="result">
-                  <p>
-                    <b>Your Monster:</b>
-                  </p>
-                  <p>{monster}</p>
-                </div>
-              )}
-            </div>
+            {monster && (
+              <div className="result">
+                <p>
+                  <b>Your Monster:</b>
+                </p>
+                <p>{monster}</p>
+              </div>
+            )}
           </div>
         </div>
-        {trope && setting && meetCute && monster ? (
-          <div className="result">
-            <h3>Your Story Prompt:</h3>
-            <p>
-              A {trope.toLowerCase()} romance set in a {setting.toLowerCase()},
-              with <br /> {monster.toLowerCase()} hero where the characters meet
-              through {meetCute.toLowerCase()}.
-            </p>
-          </div>
-        ) : (
-          <p>Roll all four to generate your final prompt!</p>
-        )}
-<br/>
-<br/>
-        <button onClick={clearPrompt}>Click to clear prompts</button>
-        <br/>
-<br/>
+      </div>
+      {trope && setting && meetCute && monster ? (
+        <div className="result">
+          <h3>Your Story Prompt:</h3>
+          <p>
+            A {trope.toLowerCase()} romance set in a {setting.toLowerCase()},
+            with <br /> {monster.toLowerCase()} hero where the characters meet
+            through {meetCute.toLowerCase()}.
+          </p>
+        </div>
+      ) : (
+        <p>Roll all four to generate your final prompt!</p>
+      )}
+      <br />
+      <br />
+      <button onClick={clearPrompt}>Click to clear prompts</button>
+      <br />
+      <br />
+      <footer>
+        <p>Made by Kenzie James.</p>
+      </footer>
     </section>
   );
 }
